@@ -36,11 +36,11 @@ def help(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('💌 ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ 💌', url=f'http://t.me/EpikDownloadsBot?startgroup=new'),
+                    InlineKeyboardButton('💌 ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ 💌', url=f'http://t.me/KlasDowlandsBot?startgroup=new'),
                   ],[
-                    InlineKeyboardButton('📚 ᴋᴀɴᴀʟ', url=f'https://t.me/EpikDuyuru')
+                    InlineKeyboardButton('📚 ᴋᴀɴᴀʟ', url=f'https://t.me/KlasChannel')
                   ],[
-                    InlineKeyboardButton('👤 ᴏᴡɴᴇʀ', url=f'https://t.me/EpikOwner')
+                    InlineKeyboardButton('👤 ᴏᴡɴᴇʀ', url=f'https://t.me/goktuResmi')
                   ]
             ]
         )
