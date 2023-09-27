@@ -36,11 +36,11 @@ def help(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('💌 ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ 💌', url=f'http://t.me/KlasDowlandsBot?startgroup=new'),
+                    InlineKeyboardButton('💫 ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ ', url=f'http://t.me/KlasDowlandsBot?startgroup=new'),
                   ],[
-                    InlineKeyboardButton('📚 ᴋᴀɴᴀʟ', url=f'https://t.me/KlasChannel')
+                    InlineKeyboardButton('💡 ᴋᴀɴᴀʟ', url=f'https://t.me/KlasChannel')
                   ],[
-                    InlineKeyboardButton('👤 ᴏᴡɴᴇʀ', url=f'https://t.me/goktuResmi')
+                    InlineKeyboardButton('🌟 ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f'https://t.me/goktuResmi')
                   ]
             ]
         )
@@ -63,10 +63,10 @@ async def bul(_, message):
         duration = results[0]["duration"]
 
     except Exception as e:
-        await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...**")
+        await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎉**")
         print(str(e))
         return
-    await m.edit("➻ **şᴀʀᴋɪ ɪɴᴅɪʀɪʟɪʏᴏʀ ...**")
+    await m.edit("➻ **şᴀʀᴋɪ ɪɴᴅɪʀɪʟɪʏᴏʀ ...🎉**")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -78,7 +78,7 @@ async def bul(_, message):
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        await m.edit("➻ **şᴀʀᴋɪ ʏᴜ̈ᴋʟᴇɴɪʏᴏʀ ...**")
+        await m.edit("➻ **şᴀʀᴋɪ ʏᴜ̈ᴋʟᴇɴɪʏᴏʀ ...🎉**")
         await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="♫︎ 𝐌𝐮̈𝐳𝐢𝐤 𝐈𝐧𝐝𝐢𝐫𝐢𝐜𝐢 ♫︎")
         await m.delete()
         await _.send_audio(chat_id=PLAYLIST_ID, audio=audio_file, caption=res, performer="♫︎ 𝐌𝐮̈𝐳𝐢𝐤 𝐈𝐧𝐝𝐢𝐫𝐢𝐜𝐢 ♫︎", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
@@ -122,12 +122,12 @@ async def vsong(client, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("➻ **ᴠɪᴅᴇᴏ ᴀʀᴀɴɪʏᴏʀ ...**")
+        msg = await message.reply("➻ **ᴠɪᴅᴇᴏ ᴀʀᴀɴɪʏᴏʀ ...🎉**")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
-        return await msg.edit(f"➻ **ᴠɪᴅᴇᴏ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...**")
+        return await msg.edit(f"➻ **ᴠɪᴅᴇᴏ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎉**")
     preview = wget.download(thumbnail)
     await msg.edit("➻ **ᴠɪᴅᴇᴏ ɪɴᴅɪʀɪʟɪʏᴏʀ ...**")
     await message.reply_video(
