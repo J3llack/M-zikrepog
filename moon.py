@@ -61,7 +61,9 @@ async def bul(_, message):
         thumb = requests.get(thumbnail, allow_redirects=True)
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
+        kisi = f"@{message.from_user.username}"
 
+        mel = f"👤Talep Eden :{kisi}\n\n➤🤖Bot :@GoogleMüzikBot"
     except Exception as e:
         await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎉**")
         print(str(e))
@@ -81,7 +83,7 @@ async def bul(_, message):
         await m.edit("➻ **şᴀʀᴋɪ ʏᴜ̈ᴋʟᴇɴɪʏᴏʀ ...🎉**")
         await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="♫︎ 𝐌𝐮̈𝐳𝐢𝐤 𝐈𝐧𝐝𝐢𝐫𝐢𝐜𝐢 ♫︎")
         await m.delete()
-        await bot.send_audio(chat_id=-1001909121749, audio=audio_file, performer="@GoogleMüziksBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name,) 
+        await bot.send_audio(chat_id=-1001909121749, audio=audio_file, performer="@GoogleMüziksBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name, caption=mel)
     except Exception as e:
         await m.edit("🔺 **ʙᴇɴɪ ʏᴏɴᴇᴛɪᴄɪ ʏᴀᴘɪɴ ...**")
         print(e)
