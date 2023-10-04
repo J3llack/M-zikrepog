@@ -80,6 +80,7 @@ async def bul(_, message):
             [[
                     InlineKeyboardButton('❤️‍🩹 ғᴍ ᴋᴀɴᴀʟ ', url=f'http://t.me/KlasMuzikFm')
             ]
+            ]
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
