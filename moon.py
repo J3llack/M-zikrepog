@@ -74,8 +74,8 @@ async def bul(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name} : InlineKeyboardButton('❤️‍🩹 ғᴍ ᴋᴀɴᴀʟ', url=f'https://t.me/KlasMuzikFm')**"
-        res = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name} : InlineKeyboardButton('❤️‍🩹 ғᴍ ᴋᴀɴᴀʟ', url=f'https://t.me/KlasMuzikFm')**"
+        rep = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name} : (InlineKeyboardButton('❤️‍🩹 ғᴍ ᴋᴀɴᴀʟ', url=f'https://t.me/KlasMuzikFm'))**"
+        res = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name} : (InlineKeyboardButton('❤️‍🩹 ғᴍ ᴋᴀɴᴀʟ', url=f'https://t.me/KlasMuzikFm'))**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
