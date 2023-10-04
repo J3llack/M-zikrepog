@@ -63,7 +63,7 @@ async def bul(_, message):
         duration = results[0]["duration"]
         kisi = f" {message.from_user.first_name}"
 
-        mel = f"🏷️Talep Eden : {kisi}\n\n🤖Bot : @KlasDowlands\n\n@KlasMuzikFm ❤️‍🩹"
+        mel = f"🏷️ Talep Eden : {kisi}\n\n🤖 Bot : @KlasDowlandsBot\n\n@KlasMuzikFm ❤️‍🩹"
     except Exception as e:
         await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎉**")
         print(str(e))
