@@ -79,15 +79,13 @@ async def bul(_, message):
                       Button.url('❤️‍🩹' ᴋʟᴀs ᴍᴜᴢɪᴋ ғᴍ, f'https://t.me/KlasMuzikFm')
                       ]
                     ),
-                    link_preview=False)
-                    
+                                       
         res = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name}**",buttons=(
                       [
                       Button.url('❤️‍🩹' ᴋʟᴀs ᴍᴜᴢɪᴋ ғᴍ, f'https://t.me/KlasMuzikFm')
                       ]
                     ),
-                    link_preview=False)
-                      
+                                          
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
