@@ -36,11 +36,11 @@ def help(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('💫 ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ ', url=f'http://t.me/KlasDowlandsBot?startgroup=new'),
+                    InlineKeyboardButton('💫 ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ ', url=f'http://t.me/KurdDowlandsBot?startgroup=new'),
                   ],[
-                    InlineKeyboardButton('💡 ᴋᴀɴᴀʟ', url=f'https://t.me/KlasChannel')
+                    InlineKeyboardButton('💡 ᴋᴀɴᴀʟ', url=f'https://t.me/KurdMuzikFM')
                   ],[
-                    InlineKeyboardButton('🌟 ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f'https://t.me/goktuResmi')
+                    InlineKeyboardButton('🌟 ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f'https://t.me/J3llack')
                   ]
             ]
         )
@@ -63,27 +63,27 @@ async def bul(_, message):
         duration = results[0]["duration"]
         kisi = f" {message.from_user.first_name}"
 
-        mel = f"🏷️ Talep Eden : {kisi}\n\n🤖 Bot : @KlasDowlandsBot\n\n@KlasMuzikFm ❤️‍🩹"
+        mel = f"🏷️ Talep Eden : {kisi}\n\n🤖 Bot : @KurdDowlandsBot\n\n@KurdMuzikFm 👻"
     except Exception as e:
-        await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎉**")
+        await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎶**")
         print(str(e))
         return
-    await m.edit("➻ **şᴀʀᴋɪ ɪɴᴅɪʀɪʟɪʏᴏʀ ...🎉**")
+    await m.edit("➻ **şᴀʀᴋɪ ɪɴᴅɪʀɪʟɪʏᴏʀ ...🎶**")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name}\n\n Paylaşılan Kanal Altta. 👇\n\n@KlasMuzikFm ❤️‍🩹**"                                                
-        res = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name}\n\n Paylaşılan Kanal Altta. 👇\n\n\@KlasMuzikFm ❤️‍🩹**"                                                              
+        rep = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name}\n\n Paylaşılan Kanal Altta. 👇\n\n@KKurdMuzikFm  👻**"                                                
+        res = f"**➻ ᴘᴀʀᴄ̧ᴀ : {title[:35]}\n➻ sᴜ̈ʀᴇ : {duration}\n\n➻ ɪsᴛᴇʏᴇɴ : {message.from_user.first_name}\n\n Paylaşılan Kanal Altta. 👇\n\n\@KKurdMuzikFm 👻**"                                                              
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        await m.edit("➻ **şᴀʀᴋɪ ʏᴜ̈ᴋʟᴇɴɪʏᴏʀ ...🎉**")
-        await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@KlasMuzikBot")
+        await m.edit("➻ **şᴀʀᴋɪ ʏᴜ̈ᴋʟᴇɴɪʏᴏʀ ...🎶**")
+        await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@KurdBeatsBot")
         await m.delete()
-        await bot.send_audio(chat_id=-1001909121749, audio=audio_file, performer="@KlasMuzikBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name, caption=mel)
+        await bot.send_audio(chat_id=-1001566400712, audio=audio_file, performer="@KurdBeatsBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name, caption=mel)
     except Exception as e:
         await m.edit("🔺 **ʙᴇɴɪ ʏᴏɴᴇᴛɪᴄɪ ʏᴀᴘɪɴ ...**")
         print(e)
@@ -124,12 +124,12 @@ async def vsong(client, message):
     except Exception as e:
         print(e)
     try:
-        msg = await message.reply("➻ **ᴠɪᴅᴇᴏ ᴀʀᴀɴɪʏᴏʀ ...🎉**")
+        msg = await message.reply("➻ **ᴠɪᴅᴇᴏ ᴀʀᴀɴɪʏᴏʀ ...🎶**")
         with YoutubeDL(ydl_opts) as ytdl:
             ytdl_data = ytdl.extract_info(link, download=True)
             file_name = ytdl.prepare_filename(ytdl_data)
     except Exception as e:
-        return await msg.edit(f"➻ **ᴠɪᴅᴇᴏ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎉**")
+        return await msg.edit(f"➻ **ᴠɪᴅᴇᴏ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎶**")
     preview = wget.download(thumbnail)
     await msg.edit("➻ **ᴠɪᴅᴇᴏ ɪɴᴅɪʀɪʟɪʏᴏʀ ...**")
     await message.reply_video(
