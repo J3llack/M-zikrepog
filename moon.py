@@ -61,8 +61,8 @@ async def bul(_, message):
         thumb = requests.get(thumbnail, allow_redirects=True)
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
-        kisi = f"{message.from_user.first_name}(tg://user?id=message{message.id})"
-
+        kisi = f"{message.from_user.first_name}(tg://user?id=message{usr.id})"
+        
         mel = f"🏷️ Talep Eden : {kisi}\n\n🕊️ Bot : @KurdDowlandsBot\n\n@KurdMuzikFm 👻"
     except Exception as e:
         await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎶**")
