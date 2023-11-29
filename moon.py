@@ -76,7 +76,7 @@ async def bul(_, message):
         kisi = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
 
         
-        mel = f"👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}`\n\n💠Yükleyen Bot : @DownloadMusiccBot"
+        mel = f"👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}`\n\n💠Yükleyen Bot : @KurdDowlandsBot"
     except Exception as e:
         await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎶**")
         print(str(e))
@@ -87,8 +87,8 @@ async def bul(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}\n\n**✨Müziğiniz Alttaki Kanalda Paylaşıldı..**\n\n@KurdMuzikFm"                                                
-        res = f"**👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}\n\n**✨Müziğiniz Alttaki Kanalda Paylaşıldı.**\n\n@KurdMuzikFm"                                                           
+        rep = f"**👤 İstiyen :** [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}\n\n✨ **Müziğiniz Alttaki Kanalda Paylaşıldı..**\n\n@KurdMuzikFm"                                                
+        res = f"**👤 İstiyen :** [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}\n\n✨ **Müziğiniz Alttaki Kanalda Paylaşıldı..**\n\n@KurdMuzikFm"                                                           
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
