@@ -3,5 +3,5 @@ import os
 class Config:
     API_ID = int(os.environ.get("API_ID", "26177237")) #Karışmayın
     API_HASH = os.environ.get("API_HASH", "6929515a9de7f855c81d4e64f6f3a4e9") #Karışmayın
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6326154616:AAHm7IB0dcSgo283xKsZqMiKZq2xBFXt4vM") #Botunuzun Tokenini Girin .  
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6326154616:AAEzpebDUYPV8yZAwl47xwVwzXDq8X_JEYM") #Botunuzun Tokenini Girin .  
     PLAYLIST_ID = os.environ.get("PLAYLIST_ID", "")
