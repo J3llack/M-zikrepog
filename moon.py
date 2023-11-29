@@ -1,4 +1,5 @@
 import wget
+import coroutine
 import os, youtube_dl, requests, time
 
 from youtube_search import YoutubeSearch
@@ -21,31 +22,42 @@ from pyrogram.types import (
 
 
 bot = Client(
-    'moonBot',
+    'goktugass',
     bot_token = Config.BOT_TOKEN,
     api_id = Config.API_ID,
     api_hash = Config.API_HASH
 )
 
 # START KOMUTU
-@bot.on_message(filters.command(["start"]))
-def help(client, message):
+@bot.on_message(filters.command(["start"]) & filters.private)
+async def start_(client, message):
+    chat_id = message.chat.id
     helptext = f'**📥 Telegram Müzik & Video İndirme Botudur, Tamamen Ücretsizdir ...\n\n» /bul < müzik adı >\n    - Anında Müzik İndirir ...\n» /vbul < video adı >\n    - Anında Video İndirir ...**'
-    message.reply_text(
-        text=helptext, 
-        quote=False,
+    await client.send_message(
+        chat_id,
+        text=helptext,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('💫 ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ ', url=f'http://t.me/KurdDowlandsBot?startgroup=new'),
+                    InlineKeyboardButton('✨ ʙᴇɴɪ ɢʀᴜʙᴀ ᴇᴋʟᴇ ', url=f'http://t.me/KurdDowlandsBot?startgroup=new'),
                   ],[
                     InlineKeyboardButton('💡 ᴋᴀɴᴀʟ', url=f'https://t.me/KurdMuzikFM')
                   ],[
-                    InlineKeyboardButton('🌟 ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f'https://t.me/J3llack')
+                    InlineKeyboardButton('👨‍💻 ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f'https://t.me/J3llack')
                   ]
             ]
         )
     )
-
+    
+    first_name = message.from_user.mention
+    user_id = message.from_user.id
+    
+    await client.send_message(-1002126216629, f"""
+Özelden Start Verdi
+Kullanıcı adı : {first_name}
+Kullanıcı İD : {user_id}
+"""
+)   
+    
 # MÜZİK İNDİRME KOMUTU
 @bot.on_message(filters.command(["bul", "song"]) & ~filters.edited)
 async def bul(_, message):
@@ -62,8 +74,9 @@ async def bul(_, message):
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
         kisi = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
+
         
-        mel = f"👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}`\n\n@KurdMuzikFm  👻"
+        mel = f"👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}`\n\n💠Yükleyen Bot : @DownloadMusiccBot"
     except Exception as e:
         await m.edit("➻ **şᴀʀᴋɪ ʙᴜʟᴜɴᴀᴍᴀᴅɪ ...🎶**")
         print(str(e))
@@ -74,16 +87,16 @@ async def bul(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}`\n\n Paylaşılan Kanal Altta. 👇\n\n@KurdMuzikFm  👻**"                                                
-        res = f"**👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}`\n\n Paylaşılan Kanal Altta. 👇\n\n\@KKurdMuzikFm 👻**"                                                              
+        rep = f"**👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}\n\n**✨Müziğiniz Alttaki Kanalda Paylaşıldı..**\n\n@KurdMuzikFm"                                                
+        res = f"**👤 İstiyen [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n☁️ **Başlık :** [{title[:23]}]({link})\n⏱️ **Süre :** `{duration}\n\n**✨Müziğiniz Alttaki Kanalda Paylaşıldı.**\n\n@KurdMuzikFm"                                                           
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
         await m.edit("➻ **şᴀʀᴋɪ ʏᴜ̈ᴋʟᴇɴɪʏᴏʀ ...🎶**")
-        await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@KurdBeatsBot")
+        await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@KurdDowlandsBot")
         await m.delete()
-        await bot.send_audio(chat_id=-1001566400712, audio=audio_file, performer="@KurdBeatsBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name, caption=mel)
+        await bot.send_audio(chat_id=-1001566400712, audio=audio_file, performer="@KurdowlandsBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name, caption=mel)
     except Exception as e:
         await m.edit("🔺 **ʙᴇɴɪ ʏᴏɴᴇᴛɪᴄɪ ʏᴀᴘɪɴ ...**")
         print(e)
