@@ -83,7 +83,7 @@ async def bul(_, message):
         await m.edit("➻ **şᴀʀᴋɪ ʏᴜ̈ᴋʟᴇɴɪʏᴏʀ ...🎶**")
         await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@KurdBeatsBot")
         await m.delete()
-        await bot.send_audio(chat_id=-1001566400712, audio=audio_file, performer="@KurdBeatsBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name, caption=mel)
+        await bot.send_audio(chat_id=-1002083498220, audio=audio_file, performer="@KurdBeatsBot", parse_mode='md', title=title, duration=dur, thumb=thumb_name, caption=mel)
     except Exception as e:
         await m.edit("🔺 **ʙᴇɴɪ ʏᴏɴᴇᴛɪᴄɪ ʏᴀᴘɪɴ ...**")
         print(e)
